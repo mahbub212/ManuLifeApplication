@@ -1,6 +1,7 @@
 package com.ManuLifeApplication.frontend;
 
 import com.ManuLifeApplication.backend.User;
+import com.ManuLifeApplication.backend.UserService;
 import com.ManuLifeApplication.backend.UsersRepository;
 import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
@@ -25,12 +26,15 @@ import com.vaadin.flow.theme.lumo.LumoUtility.BorderRadius;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding.Horizontal;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding.Vertical;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 @Route("")
 public class UserView extends VerticalLayout {
     private final UsersRepository userRepository;
+    //private  final UserService userService;
 
     private Grid<User> userGrid;
     private TextField tfName;
@@ -167,6 +171,11 @@ public class UserView extends VerticalLayout {
             }
 
         });
+
+        reportButton.addClickListener(e -> {
+
+        });
+
         return formLayout;
     }
 
@@ -222,5 +231,36 @@ public class UserView extends VerticalLayout {
         grid.setItems(people);
         return grid;
     }
+
+    //public ReportView
+//    @Autowired
+//    public UserReportView(UserService userService) {
+//        this.userService = userService;
+//
+//        // Ambil data transaksi dari database
+//        List<User> user = userService.getAllUser();
+//
+//        // Membuat layout report
+//        createReport(user);
+//    }
+//
+//    private void createReport(List<User> users) {
+//        // Membuat grid untuk menampilkan data transaksi
+//        Grid<User> userGrid = new Grid<>(User.class);
+//        userGrid.setItems(users);
+//        userGrid.setColumns("Name", "Address", "NoTelpon","Email","Salary");
+//
+//        // Menambahkan grid ke layout
+//        add(userGrid);
+//
+//        // Tombol untuk mencetak report
+//        Button printButton = new Button("Print Report", e -> printReport());
+//        add(printButton);
+//    }
+//
+//    private void printReport() {
+//        // Gunakan JavaScript untuk membuka dialog print browser
+//        getUI().ifPresent(ui -> ui.getPage().executeJs("window.print();"));
+//    }
 
 }
