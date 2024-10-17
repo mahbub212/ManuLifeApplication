@@ -1,6 +1,10 @@
 # ManuLifeApplication
 Testing Manu Life Application 
 
+Information
+1. Click button Report not working
+2. Open browser http://localhot:8080/user-report
+
 Instruction for Deployment
 1.  mvn clean package -DskipTests
 2.  cd \target
