@@ -8,6 +8,13 @@ Depedencies
 For more details on what dependencies are used, you can see the pom.xml file, but what you need attention to is the dependencies for Java Version, 
 Vaadin and Jasper Report.
 
+Setup Instruction
+1. Install JAVA JDK 21.0.1
+2. Install Apache Maven 3.8.4
+3. Install Postgree 10
+4. Install Tibco JasperSoft Studio 6.12.2
+5. Install IntelliJ IDEA Community Edtion 2024.2.3 or Above
+
 
 Information
 1. Click button Report not working
